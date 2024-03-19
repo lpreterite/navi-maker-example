@@ -5,27 +5,29 @@
 
 function renderNavi(h, items) {
   return (vm) => {
-    return items.map((node) => {
-      const element = node.type;
-      const $title = h(
-        "span",
-        {
-          ...(node.type !== "item" ? { slot: "title" } : {}),
-        },
-        [node.icon ? <iv-icon type={node.icon} /> : "", node.title]
-      );
-      return h(
-        element,
-        {
-          props: {
-            title: node.title,
-            name: node.name,
-            index: node.path,
+    return items
+      .filter((i) => i.shown)
+      .map((node) => {
+        const element = node.type;
+        const $title = h(
+          "span",
+          {
+            ...(node.type !== "item" ? { slot: "title" } : {}),
           },
-        },
-        [$title, node.children ? renderNavi(h, node.children)(vm) : ""]
-      );
-    });
+          [node.icon ? <i class={node.icon} /> : "", node.title]
+        );
+        return h(
+          element,
+          {
+            props: {
+              title: node.title,
+              name: node.name,
+              index: node.path,
+            },
+          },
+          [$title, node.children ? renderNavi(h, node.children)(vm) : ""]
+        );
+      });
   };
 }
 
@@ -69,10 +71,10 @@ export default {
     );
   },
   methods: {
-    onSelect(index){
-      console.log(index)
+    onSelect(index) {
+      console.log(index);
       this.$emit("select", index);
     },
-  }
+  },
 };
 </script>

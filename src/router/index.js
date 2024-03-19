@@ -74,6 +74,7 @@ const navi = stuff(naviMaker.getNavi(nodes), [], {
     return {
       name: node.name,
       title: node.title,
+      icon: node.icon,
       path: navi.path || (route ? routeNode.route.path : ""),
       shown: typeof navi.shown == "undefined" ? true : navi.shown,
       type: types[type],

@@ -13,6 +13,7 @@ export default [
       {
         name: "dashboard",
         title: "仪表盘",
+        icon: "el-icon-menu",
         route: {
           path: "dashboard",
           component: () => import("@/pages/Dashboard.vue"),
@@ -24,6 +25,7 @@ export default [
       {
         name: "+posts",
         title: "文章库",
+        icon: "el-icon-folder-opened",
         navi: {
           path: "/posts/draf",
         },
@@ -31,6 +33,7 @@ export default [
           {
             name: "posts/draf",
             title: "草稿箱",
+            icon: "el-icon-document",
             route: {
               path: "/posts/draf",
               component: () => import("@/pages/Draf.vue"),
@@ -40,6 +43,7 @@ export default [
           {
             name: "posts/publish",
             title: "已发布",
+            icon: "el-icon-document-checked",
             route: {
               path: "/posts/publish",
               component: () => import("@/pages/Publish.vue"),
@@ -56,6 +60,7 @@ export default [
               {
                 name: "posts/trash",
                 title: "垃圾桶",
+                icon: "el-icon-delete",
                 route: {
                   path: "/posts/trash",
                   component: () => import("@/pages/Trash.vue"),
@@ -69,6 +74,7 @@ export default [
       {
         name: "users",
         title: "用户管理",
+        icon: "el-icon-user",
         route: {
           path: "/users",
           component: () => import("@/pages/Users.vue"),
