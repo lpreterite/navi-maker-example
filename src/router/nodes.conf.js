@@ -4,7 +4,7 @@ export default [
     route: {
       path: "/",
       redirect: "/dashboard",
-      meta:{
+      meta: {
         authOn: true,
       },
       component: () => import("@/components/Layout.vue"),
@@ -39,6 +39,20 @@ export default [
               component: () => import("@/pages/Draf.vue"),
             },
             navi: true,
+            children: [
+              {
+                name: "posts/draf/detail",
+                title: "文章详情",
+                route: {
+                  path: "/posts/draf/:id",
+                  component: () => import("@/pages/Post.vue"),
+                  parentName: "home",
+                },
+                navi: {
+                  shown: false,
+                },
+              },
+            ],
           },
           {
             name: "posts/publish",
@@ -49,6 +63,20 @@ export default [
               component: () => import("@/pages/Publish.vue"),
             },
             navi: true,
+            children: [
+              {
+                name: "posts/publish/detail",
+                title: "文章详情",
+                route: {
+                  path: "/posts/publish/:id",
+                  component: () => import("@/pages/Post.vue"),
+                  parentName: "home",
+                },
+                navi: {
+                  shown: false,
+                },
+              },
+            ],
           },
           {
             name: "+other",
@@ -66,6 +94,20 @@ export default [
                   component: () => import("@/pages/Trash.vue"),
                 },
                 navi: true,
+                children: [
+                  {
+                    name: "posts/trash/detail",
+                    title: "文章详情",
+                    route: {
+                      path: "/posts/trash/:id",
+                      component: () => import("@/pages/Post.vue"),
+                      parentName: "home",
+                    },
+                    navi: {
+                      shown: false,
+                    },
+                  },
+                ],
               },
             ],
           },

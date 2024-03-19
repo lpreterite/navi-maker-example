@@ -1,5 +1,5 @@
 <template>
-  <div>文章管理</div>
+  <div>文章详情</div>
 </template>
 <script>
 export default {
