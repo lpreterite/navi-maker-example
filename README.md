@@ -1,22 +1,26 @@
 # navi-maker-example
 
-## Project setup
+navi-maker的一个管理后台例子
+
+## 特性
+
+路由和导航使用[navi-maker](https://github.com/lpreterite/navi-maker)进行统一管理，并再提供一些常规的功能例子。
+
+- 页面标题随着路由变化
+- 面包屑导航
+- 侧边栏导航
+- 路由权限控制（登录）
+- 明细页面导航和路由设置（待补充）
+
+## Develop
+
 ```
 npm install
-```
 
-### Compiles and hot-reloads for development
-```
 npm run serve
-```
 
-### Compiles and minifies for production
-```
 npm run build
-```
 
-### Lints and fixes files
-```
 npm run lint
 ```
 
